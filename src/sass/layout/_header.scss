@@ -1,0 +1,59 @@
+.header {
+  background-color: $color-blue; 
+
+  &__logo {
+    font-family: $galada; 
+    color: $color-white; 
+    font-size: 3rem;
+    margin-left: 8rem; 
+    margin-top: .8rem;
+  }
+
+  &__loginForm {
+    color: $color-white; 
+    // margin-left: 2rem;
+
+    &--container {
+      display: inline-block;
+      &:not(:last-child) {
+        margin-right: 1rem; 
+      }
+    }
+    &--input {
+      border: none;
+      height: 2rem;
+    }
+
+    &--label {
+      margin-top: .5rem; 
+      margin-bottom: .3rem; 
+      font-family: Helvetica; 
+    }
+
+    &--btn {
+      border: none; 
+      padding: .5rem 1rem;
+      color: $color-blue;
+      font-family: Helvetica; 
+      box-shadow: 0 1rem 2rem rgba($color-blue, .2);
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__forgotAccount {
+    margin-top: .5rem; 
+    margin-bottom: .7rem;
+    color: $color-white; 
+    font-family: Helvetica; 
+    margin-left: 12.8rem;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+
+}

@@ -4,3 +4,4 @@ require("webpack-hot-middleware/client?reload=true");
 require("babel-register");
 require("./index.html");
 require("./App");
+require("./sass/main.scss");

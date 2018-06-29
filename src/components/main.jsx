@@ -1,4 +1,5 @@
 import React, { Component } from 'react'; 
+import HeaderLogin from './appheader/Header.jsx';
 
 export default class Main extends Component {
   constructor(props) {
@@ -8,7 +9,9 @@ export default class Main extends Component {
 
   render() {
     return (
-      <h1>Hello from Main</h1>
+      <div>
+        <HeaderLogin /> 
+      </div>
     )
   }
 } 

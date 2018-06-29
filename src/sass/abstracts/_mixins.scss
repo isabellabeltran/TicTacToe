@@ -1,0 +1,12 @@
+/*
+CLEARFIX: it appends a pseudo element after the element which will then clear these floats 
+*/
+
+@mixin clearfix {
+  &::after {
+    // we want the content empty because we don't want to display it 
+    content: ""; 
+    display: table; 
+    clear: both; 
+  }
+}

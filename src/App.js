@@ -1,22 +1,25 @@
 import React from 'react'; 
 import ReactDOM from 'react-dom';
-import Application from './components/main.jsx'; 
+import { BrowserRouter } from 'react-router-dom';
+import Application from './components/index.jsx'; 
 import { AppContainer } from 'react-hot-loader';
 //^^^ Preserve react state
 
 function render(Component) {
   ReactDOM.render(
+    <BrowserRouter> 
     <AppContainer>
       <Component />
-    </AppContainer>, 
+    </AppContainer>
+    </BrowserRouter>, 
   document.getElementById("root"));
 }
 
 render(Application);
 
 if (module.hot) {
-  module.hot.accept('./components/main.jsx', () => {
-    const NewApplication = require('./components/main.jsx').default
+  module.hot.accept('./components/index.jsx', () => {
+    const NewApplication = require('./components/index.jsx').default
     render(NewApplication); 
   }); 
 }

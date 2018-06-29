@@ -1,0 +1,42 @@
+.loginContainer {
+  background-color: $color-grey; 
+  opacity: .5;
+  height: 83vh; 
+  padding: 2rem;
+
+  &__left {
+    width: 50%; 
+    display: inline-block;
+
+    &--title {
+      color: $color-white; 
+    }
+    &--subTitle {
+      color: $color-white; 
+    }
+  }
+
+  &__right {
+    width: 50%; 
+    display: inline-block;
+    &--title {
+      color: $color-white; 
+    }
+    &--subTitle {
+      color: $color-white; 
+    }
+  }
+
+  &__form {
+    &--input1 {
+
+    }
+    &--input2 {
+      
+    }
+    &--input3 {
+      color: $color-white;
+    }
+  }
+
+} 

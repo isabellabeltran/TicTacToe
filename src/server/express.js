@@ -22,6 +22,8 @@ const staticMiddleware = express.static('dist');
 
 server.use(staticMiddleware);
 
+server.get('*', (req, res) => res.sendFile(path.resolve(__dirname, '../index.html')));
+
 server.listen(8080, () => {
   console.log('Successfully connected to port 8080'); 
 }); 

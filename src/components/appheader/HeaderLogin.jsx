@@ -22,12 +22,17 @@ export default class HeaderLogin extends Component {
     const { history } = this.props;
     const { email, password } = this.state; 
     try {
-      const { data } = await axios.get(`http://localhost:3435/api/verifyLogin/${email}/${password}`); 
-      localStorage.setItem('user', {
+      const body = {
+        email, 
+        password
+      }
+      const { data } = await axios.post('http://localhost:3435/api/verifyLogin', body); 
+      console.log('Data? ', data);
+      localStorage.setItem('user', JSON.stringify({
         id: data.id,
         email: data.email,
         token: data.token.accessToken 
-      });
+      }));
       history.push('/home'); 
     } catch (err) {
       console.log('Error verifying account - ', err);

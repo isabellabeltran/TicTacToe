@@ -53,6 +53,38 @@
       cursor: pointer;
     }
   }
+}
+
+.container {
 
 
+  &__logo {
+    vertical-align: top;
+    height: 3rem;
+    width: 3rem;
+    margin-top: .5rem;
+    margin-left: 9rem;
+    margin-right: 1rem;
+    margin-bottom: .5rem;
+    display: inline-block; 
+  }
+  &__search {
+    display: inline-block; 
+    vertical-align: top;
+    
+    &--form {
+      margin-top: 1rem;
+    }
+    &--input {
+
+      border: none; 
+      height: 2rem;
+      width: 25rem;
+    }
+    &--btn {
+      border: solid $color-blue thin;  
+      height: 2.2rem; 
+      width: 6rem;
+    }
+  }
 }

@@ -3,8 +3,6 @@ require("babel-register");
 const express = require('express');
 const parser = require('body-parser');
 const helmet = require('helmet');
-// const cookieParser = require('cookie-parser');
-// const session = require('cookie-session');
 import cors from 'cors';
 const router = require('./router/index.js');
 const path = require('path');
@@ -25,14 +23,12 @@ const middleWare = [
 app.use(...middleWare);
 app.use('/api', router);
 
-// app.get('/*', function(req, res) {
-//   res.sendFile(path.join(__dirname, '../client/public/index.html'), function(err) {
-//     if (err) {
-//       res.status(500).send(err);
-//     }
-//   });
-// });
-
 app.listen(PORT, () => {
   console.log('Listening on port ' + PORT);
+});
+
+app.on('error', () => {
+  app.close(
+    setTimeout(app.listen((PORT, () => success('successfully rebooted server!'))), 1000)
+  );
 });

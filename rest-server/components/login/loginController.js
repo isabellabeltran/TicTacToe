@@ -1,20 +1,19 @@
 const { sign, verify } = require('jsonwebtoken');
-const { compare } = require('bcrypt');
 const { success, error } = require('../../../lib/log/index.js');
 const loginSQLHelper = require('./loginSQLHelper.js');
 const db = require('../../../database/index.js');
 
 const loginController = async(req, res) => {
-  const { email, password } = req.params;
   try {
     const query = {
       text: loginSQLHelper, 
-      values: [email] 
+      values: [req.body.email] 
     }
     const { rows } = await db.query(query);
-    let hashed = rows[0].password; 
-    const {id} = rows[0]; 
-    const comparePasswords = await compare(password, hashed); 
+    delete rows[0].password;
+    const { id, email } = rows[0];
+    
+    console.log('HELLO FROM LOGIN? ', rows[0]);
     const token = {}; 
       token.accessToken = sign({
         exp: Math.floor(Date.now() / 1000) + (60 * 60),

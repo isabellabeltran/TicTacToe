@@ -27,6 +27,7 @@ module.exports = {
     //Hot true is for replacing the dev server for an express server 
     hot: true,
     //For the terminal colors like the regular webpack 
+    historyApiFallback: true,
     stats: {
       colors: true 
     }

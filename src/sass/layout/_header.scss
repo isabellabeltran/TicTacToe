@@ -4,14 +4,13 @@
   &__logo {
     font-family: $galada; 
     color: $color-white; 
-    font-size: 3rem;
-    margin-left: 8rem; 
+    font-size: 3.5rem;
+    margin-left: 14rem; 
     margin-top: .8rem;
   }
 
   &__loginForm {
     color: $color-white; 
-    // margin-left: 2rem;
 
     &--container {
       display: inline-block;

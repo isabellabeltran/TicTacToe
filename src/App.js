@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import Application from './components/index.jsx'; 
 import { AppContainer } from 'react-hot-loader';
-//^^^ Preserve react state
 
 function render(Component) {
   ReactDOM.render(

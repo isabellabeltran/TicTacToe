@@ -3,6 +3,7 @@
   opacity: .5;
   height: 83vh; 
   padding: 2rem;
+  font-family: Helvetica; 
 
   &__left {
     width: 50%; 
@@ -19,24 +20,60 @@
   &__right {
     width: 50%; 
     display: inline-block;
+
     &--title {
-      color: $color-white; 
+      color: $color-black; 
+      font-size: 3rem;
+      margin: 1rem 0;
+
     }
     &--subTitle {
-      color: $color-white; 
+      color: $color-black;
+      font-size: 1.5rem;
+      margin-left: 1rem;
+      margin-bottom: 2rem;
     }
   }
 
   &__form {
-    &--input1 {
+    margin: 1.5rem;
+    color: $color-black;
 
+    &--container {
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
     }
+
+    &--input1 {
+      padding: 0 1rem;
+      margin: 0 1rem; 
+      border: none;
+      height: 2.5rem;
+      width: 17.5rem;
+    }
+
     &--input2 {
-      
+      padding: 0 1rem;
+      margin: 1rem 1rem; 
+      border: none;
+      height: 2.5rem;
+      width: 37rem;
+      display: block;
     }
-    &--input3 {
-      color: $color-white;
+
+    &--btn {
+      background-color: $color-blue;
+      border: none; 
+      color: $color-white; 
+      font-size: 1.3rem;
+      padding: .7rem 2rem; 
+      margin-top: .5rem;
+
+      &:hover {
+        cursor: pointer;
+      }
     }
-  }
+
+  } 
 
 } 

@@ -1,28 +1,57 @@
 import React, { Component } from 'react'; 
+import axios from 'axios';
 
 export default class HeaderLogin extends Component {
   constructor(props) {
     super(props);
-    this.state = {}
+    this.state = {
+      email: '',
+      password: ''
+    }
   }
+
+  handleOnChange = (e) => {
+    const { name, value } = e.target; 
+    this.setState({
+      [name]: value
+    })
+  }
+
+  handleVerifyLogin = async (e) => {
+    e.preventDefault();
+    const { history } = this.props;
+    const { email, password } = this.state; 
+    try {
+      const { data } = await axios.get(`http://localhost:3435/api/verifyLogin/${email}/${password}`); 
+      localStorage.setItem('user', {
+        id: data.id,
+        email: data.email,
+        token: data.token.accessToken 
+      });
+      history.push('/home'); 
+    } catch (err) {
+      console.log('Error verifying account - ', err);
+    }
+  }
+
   render () {
     return (
       <div className="header">
         <div className="row">
           <div className="col-1-of-2">
             <div className="header__logo">
-              PawBook
+              petBook
             </div> 
           </div>
           <div className="col-1-of-2">
-            <form className="header__loginForm">
+            <form className="header__loginForm" onSubmit={this.handleVerifyLogin.bind(this)}>
               <div className="header__loginForm--container">
               <div className="header__loginForm--label">Email or Phone</div>
-              <input className="header__loginForm--input" name="username" /> 
+              <input onChange={this.handleOnChange.bind(this)} className="header__loginForm--input" name="email" /> 
               </div> 
               <div className="header__loginForm--container">
               <div className="header__loginForm--label">Password</div>
-              <input className="header__loginForm--input" name="password" type="password" />
+              <input onChange={this.handleOnChange.bind(this)} className="header__loginForm--input" name="password" type="password" />
               </div> 
               <input className="header__loginForm--btn" type="submit" value="Log In" />
             </form>

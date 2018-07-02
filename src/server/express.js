@@ -1,10 +1,7 @@
 import express from 'express'; 
 import path from 'path';
-const router = require('./router/index.js');
 
 const server = express(); 
-
-server.use('/api', router);  
 
 const webpack = require('webpack'); 
 const config = require('../../config/webpack.dev.js');

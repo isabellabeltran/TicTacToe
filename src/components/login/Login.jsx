@@ -32,12 +32,16 @@ export default class Login extends Component {
       password
     }
     try {
-      const { data } = await axios.post('http://localhost:3435/api/createAccount', body);
+      const { data } = await axios.post('http://localhost:3000/api/createAccount', body);
       console.log('Success creating new account', data );
       localStorage.setItem('user', JSON.stringify({
         id: data.id,
         name: data.name,  
-        lastName: data.lastName,  
+        lastname: data.lastname,  
+        profilepicture: data.profilepicture,
+        email: data.email, 
+        status: data.status, 
+        treats: data.treats,
         token: data.token.accessToken 
       }));
       history.push('/home'); 

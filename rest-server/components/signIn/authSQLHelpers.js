@@ -1,6 +1,6 @@
 const createAccountHelper = `
     INSERT INTO
-      users (name, lastName, email, password)
+      users (name, lastname, email, password)
     VALUES
       ($1, $2, $3, $4)
     RETURNING

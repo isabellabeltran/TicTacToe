@@ -26,12 +26,16 @@ export default class HeaderLogin extends Component {
         email, 
         password
       }
-      const { data } = await axios.post('http://localhost:3435/api/verifyLogin', body); 
+      const { data } = await axios.post('http://localhost:3000/api/verifyLogin', body); 
       console.log('Data? ', data);
       localStorage.setItem('user', JSON.stringify({
         id: data.id,
+        name: data.name,
+        lastname: data.lastname, 
+        treats: data.treats, 
+        status: data.status,
         email: data.email,
-        token: data.token.accessToken 
+        token: data.token.accessToken
       }));
       history.push('/home'); 
     } catch (err) {
@@ -51,7 +55,7 @@ export default class HeaderLogin extends Component {
           <div className="col-1-of-2">
             <form className="header__loginForm" onSubmit={this.handleVerifyLogin.bind(this)}>
               <div className="header__loginForm--container">
-              <div className="header__loginForm--label">Email or Phone</div>
+              <div className="header__loginForm--label">Email</div>
               <input onChange={this.handleOnChange.bind(this)} className="header__loginForm--input" name="email" /> 
               </div> 
               <div className="header__loginForm--container">

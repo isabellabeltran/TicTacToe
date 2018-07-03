@@ -12,8 +12,6 @@ const loginController = async(req, res) => {
     const { rows } = await db.query(query);
     delete rows[0].password;
     const { id, email } = rows[0];
-    
-    console.log('HELLO FROM LOGIN? ', rows[0]);
     const token = {}; 
       token.accessToken = sign({
         exp: Math.floor(Date.now() / 1000) + (60 * 60),

@@ -1,0 +1,140 @@
+.homeContainer {
+  max-width: 950px;
+  min-width: 350px;
+  margin: 0 auto; 
+  height: 100vh;
+  background: rgba(138, 153, 167, .3);
+
+  &__images {
+    position: relative;
+    display: block;
+
+    &--username {
+      position: absolute;
+      font-size: 2.5rem;
+      color: $color-white;
+      letter-spacing: .5rem;
+      left: 35rem;
+      top: 11rem;
+      font-family: Helvetica; 
+      z-index: 1000;
+    }
+  }
+  &__backImage {
+    display: block;
+    width: 80%;
+    height: 15rem;
+    right: 8rem;
+    position: absolute;
+    background-color: #7880A0;
+    background-image: url(../images/colors.jpg);
+    background-size: cover;
+    background-position: bottom;
+    border-radius: 4px;
+  }
+  &__userImage {
+    display: block;
+    height: 15rem;
+    width: 20rem;
+    left: 13rem;
+    top: 4rem;
+    position: absolute;
+
+    &--img {
+      width: 100%; 
+      height: auto;
+      border-radius: 4px;
+    }
+  }
+
+  &__friends {
+    background-color: $color-white; 
+    border-radius: 4px;
+    position: absolute;
+    top: 25rem;
+    left: 11rem;
+    height: 10rem;
+    width: 80%;
+  }
+
+  &__user {
+    // border: solid black thin;
+    position: absolute;
+    height: 20rem;
+    width: 80%;
+    top: 38rem;
+    left: 11rem;
+    padding-bottom: 4rem;
+  }
+  &__feed {
+    border: solid black thin;
+    position: absolute;
+    height: 20rem;
+    width: 58%;
+    right: 0; 
+  }
+}
+
+/*
+STATUS 
+*/
+
+.personalInfo {
+  background-color: $color-white; 
+  border-radius: 4px;
+  position: absolute;
+  height: 20rem;
+  width: 40%;
+
+  &__header {
+    display: block; 
+    height: 3rem;
+
+    &--icon {
+      display: inline-block;
+      margin-left: 1.5rem;
+      color: $color-blue;
+    }
+    &--title {
+      color: $color-blue; 
+      display: inline-block;
+      font-family: Helvetica;
+      font-size: 2rem;
+      margin-left: 1rem;
+      margin-top: 1rem;
+
+    }
+  }
+
+  &__status {
+    // border: solid black thin;
+    height: 10rem;
+
+    &--form {
+      margin-top: 1.5rem;
+    }
+
+    &--input {
+      height: 2rem;
+      margin-left: 1rem;
+      width: 25rem;
+      border: solid $color-blue thin;
+      padding-left: .5rem;
+    }
+    &--btn {
+      // height: 2rem;
+      // display: inline-block;
+      // padding-left: 1.2rem;
+      // padding-top: .3rem;
+      // width: 4rem;
+      padding: .29rem 2rem;
+      background-color: $color-blue;
+      color: $color-white;
+      border: solid $color-blue thin;
+    }
+  }
+  &__treats {
+    // border: solid black thin;
+  }
+}
+

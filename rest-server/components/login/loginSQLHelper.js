@@ -1,6 +1,6 @@
 const verifyAccountHelper = `
     SELECT 
-      id, email, password
+      id, name, lastname, profilepicture, email, password, status, treats
     FROM 
       users
     WHERE

@@ -5,6 +5,7 @@ require('../../lib/validation/passport.js');
 const formValidation = require('../../lib/validation/request-validation.js');  
 const authController = require('../components/signIn/authController.js');
 const loginController = require('../components/login/loginController.js');
+const homeController = require('../components/home/homeController.js');
 const router = express.Router(); 
 
 router.route('/createAccount') 
@@ -12,5 +13,8 @@ router.route('/createAccount')
 
 router.route('/verifyLogin') 
   .post(validate(formValidation.login), passport.authenticate('local', { session: false }), loginController);
+
+router.route('/updateStatus')
+  .post(homeController); 
 
 module.exports = router; 

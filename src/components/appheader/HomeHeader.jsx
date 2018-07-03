@@ -1,5 +1,6 @@
 import React, { Component } from 'react'; 
 import logo from '../../images/logopb.png';
+import Logout from '../logout/Logout.jsx';
 
 export default class HomeHeader extends Component {
   constructor(props) {
@@ -24,7 +25,9 @@ export default class HomeHeader extends Component {
           </div>
 
           <div className="col-1-of-2">
-            
+          <div className="logoutContainer">
+            <Logout history={this.props.history}/> 
+          </div>
           </div>
         </div>
       </div>
